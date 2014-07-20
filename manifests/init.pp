@@ -5,7 +5,8 @@
 #   include lastpass
 class lastpass {
   package { 'LastPass':
-    provider => 'zip',
+    ensure => installed,
+    provider => compressed_app,
     source   => 'https://lastpass.com/download/cdn/lpmacosx.zip'
   }
 }
