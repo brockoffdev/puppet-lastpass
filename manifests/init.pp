@@ -9,6 +9,7 @@ class lastpass {
   package { 'LastPass':
     ensure => installed,
     provider => compressed_app,
+    flavor   => zip,
     source   => 'https://lastpass.com/download/cdn/lpmacosx.zip'
   }
   ~> exec { 'Install Lastpass':
