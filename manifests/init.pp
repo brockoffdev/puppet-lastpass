@@ -7,7 +7,9 @@ class lastpass {
   $install_file = '/Applications/installer.app'
 
   package { 'LastPass':
-    provider => 'zip',
+    ensure   => installed,
+    provider => compressed_app,
+    flavor   => zip,
     source   => 'https://lastpass.com/download/cdn/lpmacosx.zip'
   }
   ~> exec { 'Install Lastpass':
